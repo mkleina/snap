@@ -25,7 +25,7 @@
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/"
     },
-    "version": "1.1.0"
+    "version": "2.0"
   },
   "host": "127.0.0.1:8181",
   "basePath": "/v2",
@@ -635,7 +635,7 @@
             "x-go-name": "Action",
             "description": "Update the state of a task",
             "name": "action",
-            "in": "formData",
+            "in": "query",
             "required": true
           }
         ],
@@ -969,7 +969,7 @@
       ],
       "properties": {
         "config": {
-          "description": "TODO processor config",
+          "description": "Config the configuration of a processor.",
           "type": "object",
           "additionalProperties": {
             "type": "object"
@@ -1268,7 +1268,7 @@
       }
     },
     "MetricsResponse": {
-      "description": "MetricsResp is the representation of metric operation response.",
+      "description": "MetricsResponse is the representation of metric operation response.",
       "schema": {
         "type": "object",
         "properties": {
@@ -1283,7 +1283,7 @@
       }
     },
     "PluginConfigResponse": {
-      "description": "PluginConfigItem represents the response of a plugin config items.",
+      "description": "PluginConfigResponse represents the response of a plugin config items.",
       "schema": {
         "$ref": "#/definitions/ConfigDataNode"
       }
@@ -1310,10 +1310,10 @@
       }
     },
     "TaskErrorResponse": {
-      "description": "RemoveTaskError returns removing a task error."
+      "description": "TaskErrorResponse returns removing a task error."
     },
     "TaskResponse": {
-      "description": "TaskResp returns a task.",
+      "description": "TaskResponse returns a task.",
       "schema": {
         "$ref": "#/definitions/Task"
       }
@@ -1330,7 +1330,7 @@
       }
     },
     "TasksResponse": {
-      "description": "TasksResp returns a list of created tasks.",
+      "description": "TasksResponse returns a list of created tasks.",
       "schema": {
         "type": "object",
         "properties": {
