@@ -20,9 +20,9 @@ ARCH = $(shell uname -m)
 
 default:
 	$(MAKE) deps
+	$(MAKE) swagger
 	$(MAKE) snap
 	$(MAKE) plugins
-	$(MAKE) swagger
 deps:
 	bash -c "./scripts/deps.sh"
 test:

@@ -56,6 +56,8 @@ func New(wg *sync.WaitGroup, killChan chan struct{}, protocol string) *apiV2 {
 
 func (s *apiV2) GetRoutes() []api.Route {
 	routes := []api.Route{
+		api.Route{Method: "GET", Path: prefix + "/swagger.json", Handle: s.getSwaggerJSON},
+
 		// swagger:route GET /plugins plugins getPlugins
 		//
 		// Get All
