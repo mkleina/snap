@@ -413,7 +413,7 @@ func dsWFMap(port int) *wmap.WorkflowMap {
 	if e != nil {
 		panic(e)
 	}
-	wf.CollectNode = c
+	wf.Collect = c
 
 	return wf
 }

@@ -27,8 +27,8 @@ func (w *WorkflowMap) String() string {
 	var out string
 	out += "Workflow\n"
 	out += "   Collect:\n"
-	if w.CollectNode != nil {
-		out += w.CollectNode.String("      ")
+	if w.Collect != nil {
+		out += w.Collect.String("      ")
 	} else {
 		out += "\n"
 	}
@@ -61,12 +61,12 @@ func (c *CollectWorkflowMapNode) String(pad string) string {
 	}
 	out += "\n"
 	out += pad + "Process Nodes:\n"
-	for _, pr := range c.ProcessNodes {
+	for _, pr := range c.Process {
 		out += pr.String(pad)
 	}
 	out += "\n"
 	out += pad + "Publish Nodes:\n"
-	for _, pu := range c.PublishNodes {
+	for _, pu := range c.Publish {
 		out += pu.String(pad) + "\n"
 	}
 	out += "\n"
@@ -85,11 +85,11 @@ func (p *ProcessWorkflowMapNode) String(pad string) string {
 	out += pad + "   Target:" + p.Target + "\n"
 
 	out += pad + "   Process Nodes:\n"
-	for _, pr := range p.ProcessNodes {
+	for _, pr := range p.Process {
 		out += pr.String(pad + "   ")
 	}
 	out += pad + "   Publish Nodes:\n"
-	for _, pu := range p.PublishNodes {
+	for _, pu := range p.Publish {
 		out += pu.String(pad + "   ")
 	}
 	return out
