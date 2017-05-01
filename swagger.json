@@ -373,11 +373,13 @@
         "description": "A config is JSON. For example: {\"user\":\"snap\", \"host\":\"ocean_eleven\"}.",
         "consumes": [
           "application/json",
-          "application/x-protobuf"
+          "application/x-protobuf",
+          "multipart/form-data"
         ],
         "produces": [
           "application/json",
-          "application/x-protobuf"
+          "application/x-protobuf",
+          "multipart/form-data"
         ],
         "schemes": [
           "http",
@@ -436,11 +438,13 @@
         "description": "A minimum of one config key is required for this operation.",
         "consumes": [
           "application/json",
-          "application/x-protobuf"
+          "application/x-protobuf",
+          "multipart/form-data"
         ],
         "produces": [
           "application/json",
-          "application/x-protobuf"
+          "application/x-protobuf",
+          "multipart/form-data"
         ],
         "schemes": [
           "http",
@@ -530,11 +534,13 @@
         "description": "A string representation of Snap task manifest is required.",
         "consumes": [
           "application/json",
-          "application/x-protobuf"
+          "application/x-protobuf",
+          "multipart/form-data"
         ],
         "produces": [
           "application/json",
-          "application/x-protobuf"
+          "application/x-protobuf",
+          "multipart/form-data"
         ],
         "schemes": [
           "http",

@@ -176,10 +176,12 @@ func (s *apiV2) GetRoutes() []api.Route {
 		// Consumes:
 		// application/json
 		// application/x-protobuf
+		// multipart/form-data
 		//
 		// Produces:
 		// application/json
 		// application/x-protobuf
+		// multipart/form-data
 		//
 		// Schemes: http, https
 		//
@@ -196,10 +198,12 @@ func (s *apiV2) GetRoutes() []api.Route {
 		// Consumes:
 		// application/json
 		// application/x-protobuf
+		// multipart/form-data
 		//
 		// Produces:
 		// application/json
 		// application/x-protobuf
+		// multipart/form-data
 		//
 		// Schemes: http, https
 		//
@@ -299,10 +303,12 @@ func (s *apiV2) GetRoutes() []api.Route {
 		// Consumes:
 		// application/json
 		// application/x-protobuf
+		// multipart/form-data
 		//
 		// Produces:
 		// application/json
 		// application/x-protobuf
+		// multipart/form-data
 		//
 		// Schemes: http, https
 		//
