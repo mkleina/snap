@@ -33,12 +33,16 @@ type PolicyTable cpolicy.RuleTable
 
 type PolicyTableSlice []cpolicy.RuleTable
 
+type PluginConfigItem struct {
+	cdata.ConfigDataNode
+}
+
 // PluginConfigResponse represents the response of a plugin config items.
 //
 // swagger:response PluginConfigResponse
-type PluginConfigItem struct {
+type PluginConfigResponse struct {
 	// in: body
-	Config cdata.ConfigDataNode `json:"config"`
+	Body cdata.ConfigDataNode
 }
 
 // PluginConfigParam defines the string representation of a config.
@@ -73,7 +77,7 @@ func (s *apiV2) getPluginConfigItem(w http.ResponseWriter, r *http.Request, p ht
 	styp := p.ByName("type")
 	if styp == "" {
 		cfg := s.configManager.GetPluginConfigDataNodeAll()
-		item := &PluginConfigItem{Config: cfg}
+		item := &PluginConfigItem{cfg}
 		Write(200, item, w)
 		return
 	}
@@ -95,7 +99,7 @@ func (s *apiV2) getPluginConfigItem(w http.ResponseWriter, r *http.Request, p ht
 	}
 
 	cfg := s.configManager.GetPluginConfigDataNode(typ, name, iver)
-	item := &PluginConfigItem{Config: cfg}
+	item := &PluginConfigItem{cfg}
 	Write(200, item, w)
 }
 
@@ -135,7 +139,7 @@ func (s *apiV2) deletePluginConfigItem(w http.ResponseWriter, r *http.Request, p
 		res = s.configManager.DeletePluginConfigDataNodeField(typ, name, iver, src...)
 	}
 
-	item := &PluginConfigItem{Config: res}
+	item := &PluginConfigItem{res}
 	Write(200, item, w)
 }
 
@@ -175,6 +179,6 @@ func (s *apiV2) setPluginConfigItem(w http.ResponseWriter, r *http.Request, p ht
 		res = s.configManager.MergePluginConfigDataNode(typ, name, iver, src)
 	}
 
-	item := &PluginConfigItem{Config: res}
+	item := &PluginConfigItem{res}
 	Write(200, item, w)
 }
