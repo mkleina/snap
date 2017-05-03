@@ -20,11 +20,9 @@
 //
 //     Consumes:
 //     - application/json
-//     - application/x-protobuf
 //
 //     Produces:
 //     - application/json
-//     - application/x-protobuf
 //
 //
 // swagger:meta

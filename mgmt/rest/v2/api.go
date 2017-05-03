@@ -62,13 +62,8 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// An empty list is returned if there are no loaded plugins.
 		//
-		// Consumes:
-		// application/json
-		// application/x-protobuf
-		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
 		//
 		// Schemes: http, https
 		//
@@ -81,13 +76,8 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// An error will be returned if the plugin does not exist.
 		//
-		// Consumes:
-		// application/json
-		// application/x-protobuf
-		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
 		//
 		// Schemes: http, https
 		//
@@ -104,14 +94,10 @@ func (s *apiV2) GetRoutes() []api.Route {
 		// A plugin binary is required.
 		//
 		// Consumes:
-		// application/json
-		// application/x-protobuf
 		// multipart/form-data
 		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
-		// multipart/form-data
 		//
 		// Schemes: http, https
 		//
@@ -128,15 +114,8 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// Required fields are plugin type, name and version.
 		//
-		// Consumes:
-		// application/json
-		// application/x-protobuf
-		// text/plain
-		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
-		// text/plain
 		//
 		// Schemes: http, https
 		//
@@ -153,13 +132,8 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// An empty config is returned if there are no configs for the plugin.
 		//
-		// Consumes:
-		// application/json
-		// application/x-protobuf
-		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
 		//
 		// Schemes: http, https
 		//
@@ -175,13 +149,9 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// Consumes:
 		// application/json
-		// application/x-protobuf
-		// multipart/form-data
 		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
-		// multipart/form-data
 		//
 		// Schemes: http, https
 		//
@@ -197,13 +167,9 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// Consumes:
 		// application/json
-		// application/x-protobuf
-		// multipart/form-data
 		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
-		// multipart/form-data
 		//
 		// Schemes: http, https
 		//
@@ -217,13 +183,8 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// An empty list returns if there is no loaded metrics.
 		//
-		// Consumes:
-		// application/json
-		// application/x-protobuf
-		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
 		//
 		// Schemes: http, https
 		//
@@ -238,13 +199,8 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// An empty list returns if no tasks exist.
 		//
-		// Consumes:
-		// application/json
-		// application/x-protobuf
-		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
 		//
 		// Schemes: http, https
 		//
@@ -257,13 +213,8 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// The task ID is required.
 		//
-		// Consumes:
-		// application/json
-		// application/x-protobuf
-		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
 		//
 		// Schemes: http, https
 		//
@@ -277,14 +228,7 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// The task ID is required.
 		//
-		// Consumes:
-		// application/json
-		// application/x-protobuf
-		// text/event-stream
-		//
 		// Produces:
-		// application/json
-		// application/x-protobuf
 		// text/event-stream
 		//
 		// Schemes: http, https
@@ -302,13 +246,9 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// Consumes:
 		// application/json
-		// application/x-protobuf
-		// multipart/form-data
 		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
-		// multipart/form-data
 		//
 		// Schemes: http, https
 		//
@@ -324,11 +264,9 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// Consumes:
 		// application/json
-		// application/x-protobuf
 		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
 		//
 		// Schemes: http, https
 		//
@@ -344,13 +282,8 @@ func (s *apiV2) GetRoutes() []api.Route {
 		//
 		// The task ID is required.
 		//
-		// Consumes:
-		// application/json
-		// application/x-protobuf
-		//
 		// Produces:
 		// application/json
-		// application/x-protobuf
 		//
 		// Schemes: http, https
 		//

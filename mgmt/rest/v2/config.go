@@ -49,7 +49,7 @@ type PluginConfigResponse struct {
 //
 //swagger:parameters setPluginConfigItem
 type PluginConfigParam struct {
-	// in: formData
+	// in: body
 	Config string `json:"config"`
 }
 
@@ -67,9 +67,9 @@ type PluginConfigDeleteParams struct {
 	// in: path
 	// enum: collector, processor, publisher
 	PType string `json:"ptype"`
-	// in: formData
+	// in: body
 	// required: true
-	Config []string `json:"config"`
+	Config string `json:"config"`
 }
 
 func (s *apiV2) getPluginConfigItem(w http.ResponseWriter, r *http.Request, p httprouter.Params) {

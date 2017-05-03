@@ -1,11 +1,9 @@
 {
   "consumes": [
-    "application/json",
-    "application/x-protobuf"
+    "application/json"
   ],
   "produces": [
-    "application/json",
-    "application/x-protobuf"
+    "application/json"
   ],
   "schemes": [
     "http",
@@ -33,13 +31,8 @@
     "/metrics": {
       "get": {
         "description": "An empty list returns if there is no loaded metrics.",
-        "consumes": [
-          "application/json",
-          "application/x-protobuf"
-        ],
         "produces": [
-          "application/json",
-          "application/x-protobuf"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -81,13 +74,8 @@
     "/plugins": {
       "get": {
         "description": "An empty list is returned if there are no loaded plugins.",
-        "consumes": [
-          "application/json",
-          "application/x-protobuf"
-        ],
         "produces": [
-          "application/json",
-          "application/x-protobuf"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -132,14 +120,10 @@
       "post": {
         "description": "A plugin binary is required.",
         "consumes": [
-          "application/json",
-          "application/x-protobuf",
           "multipart/form-data"
         ],
         "produces": [
-          "application/json",
-          "application/x-protobuf",
-          "multipart/form-data"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -181,13 +165,8 @@
     "/plugins/{ptype}/{pname}/{pversion}": {
       "get": {
         "description": "An error will be returned if the plugin does not exist.",
-        "consumes": [
-          "application/json",
-          "application/x-protobuf"
-        ],
         "produces": [
-          "application/json",
-          "application/x-protobuf"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -244,15 +223,8 @@
       },
       "delete": {
         "description": "Required fields are plugin type, name and version.",
-        "consumes": [
-          "application/json",
-          "application/x-protobuf",
-          "text/plain"
-        ],
         "produces": [
-          "application/json",
-          "application/x-protobuf",
-          "text/plain"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -314,13 +286,8 @@
     "/plugins/{ptype}/{pname}/{pversion}/config": {
       "get": {
         "description": "An empty config is returned if there are no configs for the plugin.",
-        "consumes": [
-          "application/json",
-          "application/x-protobuf"
-        ],
         "produces": [
-          "application/json",
-          "application/x-protobuf"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -372,14 +339,10 @@
       "put": {
         "description": "A config is JSON. For example: {\"user\":\"snap\", \"host\":\"ocean_eleven\"}.",
         "consumes": [
-          "application/json",
-          "application/x-protobuf",
-          "multipart/form-data"
+          "application/json"
         ],
         "produces": [
-          "application/json",
-          "application/x-protobuf",
-          "multipart/form-data"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -392,10 +355,12 @@
         "operationId": "setPluginConfigItem",
         "parameters": [
           {
-            "type": "string",
             "x-go-name": "Config",
             "name": "config",
-            "in": "formData"
+            "in": "body",
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "type": "string",
@@ -437,14 +402,10 @@
       "delete": {
         "description": "A minimum of one config key is required for this operation.",
         "consumes": [
-          "application/json",
-          "application/x-protobuf",
-          "multipart/form-data"
+          "application/json"
         ],
         "produces": [
-          "application/json",
-          "application/x-protobuf",
-          "multipart/form-data"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -484,14 +445,13 @@
             "required": true
           },
           {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
             "x-go-name": "Config",
             "name": "config",
-            "in": "formData",
-            "required": true
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -507,13 +467,8 @@
     "/tasks": {
       "get": {
         "description": "An empty list returns if no tasks exist.",
-        "consumes": [
-          "application/json",
-          "application/x-protobuf"
-        ],
         "produces": [
-          "application/json",
-          "application/x-protobuf"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -533,14 +488,10 @@
       "post": {
         "description": "A string representation of Snap task manifest is required.",
         "consumes": [
-          "application/json",
-          "application/x-protobuf",
-          "multipart/form-data"
+          "application/json"
         ],
         "produces": [
-          "application/json",
-          "application/x-protobuf",
-          "multipart/form-data"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -553,12 +504,14 @@
         "operationId": "addTask",
         "parameters": [
           {
-            "type": "string",
             "x-go-name": "Task",
             "description": "Create a task.",
             "name": "task",
-            "in": "formData",
-            "required": true
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -574,13 +527,8 @@
     "/tasks/{id}": {
       "get": {
         "description": "The task ID is required.",
-        "consumes": [
-          "application/json",
-          "application/x-protobuf"
-        ],
         "produces": [
-          "application/json",
-          "application/x-protobuf"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -612,12 +560,10 @@
       "put": {
         "description": "The task ID is required.",
         "consumes": [
-          "application/json",
-          "application/x-protobuf"
+          "application/json"
         ],
         "produces": [
-          "application/json",
-          "application/x-protobuf"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -662,13 +608,8 @@
       },
       "delete": {
         "description": "The task ID is required.",
-        "consumes": [
-          "application/json",
-          "application/x-protobuf"
-        ],
         "produces": [
-          "application/json",
-          "application/x-protobuf"
+          "application/json"
         ],
         "schemes": [
           "http",
@@ -704,14 +645,7 @@
     "/tasks/{id}/watch": {
       "get": {
         "description": "The task ID is required.",
-        "consumes": [
-          "application/json",
-          "application/x-protobuf",
-          "text/event-stream"
-        ],
         "produces": [
-          "application/json",
-          "application/x-protobuf",
           "text/event-stream"
         ],
         "schemes": [
