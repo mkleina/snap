@@ -1003,6 +1003,22 @@ func (p *pluginControl) CollectMetrics(id string, allTags map[string]map[string]
 			if mt.Config() != nil {
 				mt.Config().ReverseMergeInPlace(p.Config.Plugins.getPluginConfigDataNode(core.CollectorPluginType, pmt.plugin.Name(), pmt.plugin.Version()))
 			}
+
+			// Update task ID tag before collection
+			tags := mt.Tags()
+			tags[core.STD_TAG_PLUGIN_TASK_ID] = id
+			metric := plugin.MetricType{
+				Namespace_:          mt.Namespace(),
+				Version_:            mt.Version(),
+				LastAdvertisedTime_: mt.LastAdvertisedTime(),
+				Config_:             mt.Config(),
+				Data_:               mt.Data(),
+				Tags_:               tags,
+				Description_:        mt.Description(),
+				Unit_:               mt.Unit(),
+				Timestamp_:          mt.Timestamp(),
+			}
+			mt = metric
 		}
 
 		wg.Add(1)

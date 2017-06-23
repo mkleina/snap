@@ -32,6 +32,7 @@ var (
 	// Standard Tags are in added to the metric by the framework on plugin load.
 	// STD_TAG_PLUGIN_RUNNING_ON describes where the plugin is running (hostname).
 	STD_TAG_PLUGIN_RUNNING_ON = "plugin_running_on"
+	STD_TAG_PLUGIN_TASK_ID    = "plugin_task_id"
 	nsPriorityList            = []string{"/", "|", "%", ":", "-", ";", "_", "^", ">", "<", "+", "=", "&", "㊽", "Ä", "大", "小", "ᵹ", "☍", "ヒ"}
 )
 

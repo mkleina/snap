@@ -1,5 +1,5 @@
 hash: 14712d189ae570ecb1e287d5a11120347c831b9b4bb6b2265eecb53acf52dc9d
-updated: 2017-05-18T11:52:57.349827646-07:00
+updated: 2017-06-22T12:06:04.737954742+02:00
 imports:
 - name: github.com/appc/spec
   version: ba99d6b8ccbbed2942e53eb5395fddae113cdf8e
@@ -12,7 +12,7 @@ imports:
   - schema/types
   - schema/types/resource
 - name: github.com/armon/go-metrics
-  version: 93f237eba9b0602f3e73710416558854a81d9337
+  version: f036747b9d0e8590f175a5d654a2194a7d9df4b5
 - name: github.com/asaskevich/govalidator
   version: 9699ab6b38bee2e02cd3fe8b99ecf67665395c96
 - name: github.com/coreos/go-semver
@@ -32,16 +32,11 @@ imports:
 - name: github.com/hashicorp/memberlist
   version: a93fbd426dd831f5a66db3adc6a5ffa6f44cc60a
 - name: github.com/intelsdi-x/gomit
-  version: db68f6fda248706a71980abc58e969fcd63f5ea6
+  version: 286c3ad6599724faed681cd18a9ff595b00d9f3f
 - name: github.com/intelsdi-x/snap-plugin-lib-go
   version: d1d32a057c0c23169796016876ce89634b2c012f
-  subpackages:
-  - v1/plugin
-  - v1/plugin/rpc
 - name: github.com/intelsdi-x/snap-plugin-utilities
   version: 3c37e3965f3fc2f24714779d3bae7ba7032b87a9
-  subpackages:
-  - str
 - name: github.com/julienschmidt/httprouter
   version: 8c199fb6259ffc1af525cc3ad52ee60ba8359669
 - name: github.com/pborman/uuid
@@ -49,9 +44,7 @@ imports:
 - name: github.com/robfig/cron
   version: 32d9c273155a0506d27cf73dd1246e86a470997e
 - name: github.com/rs/cors
-  version: 2d7dd2a10331137ae3f931ba08c21fd00cbf208d
-- name: github.com/rs/xhandler
-  version: ed27b6fd65218132ee50cd95f38474a3d8a2cd12
+  version: 8dd4211afb5d08dbb39a533b9bb9e4b486351df6
 - name: github.com/Sirupsen/logrus
   version: be52937128b38f1d99787bb476c789e2af1147f1
 - name: github.com/spf13/pflag
@@ -93,7 +86,7 @@ imports:
   - lex/httplex
   - trace
 - name: golang.org/x/sys
-  version: e62c3de784db939836898e5c19ffd41bece347da
+  version: 8f0908ab3b2457e2e15403d3697c9ef5cb4b57a9
   subpackages:
   - unix
 - name: google.golang.org/grpc

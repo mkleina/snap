@@ -24,6 +24,7 @@ import (
 	"math/rand"
 	"time"
 
+	"github.com/Sirupsen/logrus"
 	"github.com/intelsdi-x/snap/control/plugin"
 	"github.com/intelsdi-x/snap/control/plugin/cpolicy"
 	"github.com/intelsdi-x/snap/core"
@@ -52,6 +53,7 @@ var availableHosts = getAllHostnames()
 func (f *Mock) CollectMetrics(mts []plugin.MetricType) ([]plugin.MetricType, error) {
 	metrics := []plugin.MetricType{}
 	rand.Seed(time.Now().UTC().UnixNano())
+	logrus.WithFields(logrus.Fields{"task_id": mts[0].Tags()[core.STD_TAG_PLUGIN_TASK_ID]}).Info("CollectMetrics() called from task")
 	for i, p := range mts {
 		if isDynamic, _ := mts[i].Namespace().IsDynamic(); isDynamic {
 			requestedHosts := []string{}
